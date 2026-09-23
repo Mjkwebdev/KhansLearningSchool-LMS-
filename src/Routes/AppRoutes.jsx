@@ -5,7 +5,7 @@ import DashboardLayout from '../layouts/DashboardLayout';
 import LoginPage from '../pages/LoginPage';
 import ClassesPage from '../pages/ClassesPage';
 // import ChallanPage from './pages/ChallanPage';
-// import AddStudentsPage from './pages/AddStudentsPage';
+import AddStudentsPage from '../pages/AddStudentsPage';
 // import ReportsPage from './pages/ReportsPage';
 // import SettingsPage from './pages/SettingsPage';
 
@@ -20,8 +20,8 @@ export default function App() {
         <Route path="/" element={<DashboardLayout />}>
           <Route index element={<Navigate to="classes" replace />} />
           <Route path="classes" element={<ClassesPage />} />
-          {/* <Route path="challan" element={<ChallanPage />} />
           <Route path="add-student" element={<AddStudentsPage />} />
+          {/* <Route path="challan" element={<ChallanPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} /> */}
         </Route>
