@@ -12,9 +12,9 @@ import {
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const menuItems = [
-    { name: 'Classes', path: '/dashboard/classes', icon: BookOpen },
-    { name: 'Challan', path: '/dashboard/challan', icon: CreditCard },
-    { name: 'Add Students', path: '/dashboard/add-student', icon: UserPlus },
+    { name: 'Classes', path: '/classes', icon: BookOpen },
+    { name: 'Challan', path: '/challan', icon: CreditCard },
+    { name: 'Add Students', path: '/student', icon: UserPlus },
     { name: 'Reports', path: '/dashboard/reports', icon: BarChart3 },
     { name: 'Settings', path: '/dashboard/settings', icon: Settings },
   ];
