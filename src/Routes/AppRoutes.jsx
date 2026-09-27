@@ -9,6 +9,7 @@ import StudentDetailPage from '../pages/Admin/StudentDetailPage';
 // import ChallanPage from './pages/ChallanPage';
 // import AddStudentsPage from './pages/AddStudentsPage';
 import AdminDashboard from '../pages/Admin/AdminDashboard';
+import TeacherPage from '../pages/Admin/TeacherPage';
 // import ReportsPage from './pages/ReportsPage';
 // import SettingsPage from './pages/SettingsPage';
 
@@ -21,6 +22,7 @@ export default function AppRoutes() {
 
         {/* Admin Dashboard Protected Routes */}
         <Route path="/admin" element={<DashboardLayout />}>
+        <Route path='teachers' element={<TeacherPage/>}/>
           {/* Default entry when hitting root or admin base */}
           {/* <Route index element={<Navigate to="/classes" replace />} /> */}
           
