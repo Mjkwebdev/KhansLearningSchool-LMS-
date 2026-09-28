@@ -20,6 +20,7 @@ import {
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const stats = [
   { 
@@ -98,6 +99,8 @@ const schoolEvents = {
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export default function AdminDashboard() {
+const navigate = useNavigate();
+
   const [activeAttendanceTooltip, setActiveAttendanceTooltip] = useState(null);
   const [activeFeeIndex, setActiveFeeIndex] = useState(null);
   const [activeClassIndex, setActiveClassIndex] = useState(null);
@@ -177,7 +180,11 @@ export default function AdminDashboard() {
           <button 
             type="button"
             className="px-5 py-3 bg-white text-indigo-700 hover:bg-indigo-50 font-bold rounded-2xl shadow-lg transition-all text-xs flex items-center gap-2 cursor-pointer"
-          >
+           onClick={()=>{
+           navigate('/admin/students?action=add',)
+           }}
+           >
+            
             <UserPlus className="w-4 h-4" /> Add New Student
           </button>
         </div>

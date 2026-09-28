@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, ChevronDown, UserPlus, Eye, Edit3, Trash2 } from 'lucide-react';
 import Button from '../../components/common/Button';
 import GenericTable from '../../components/common/GenericTable';
@@ -17,6 +17,7 @@ const initialStudents = [
 
 export default function StudentsPage() {
   const navigate = useNavigate();
+const [searchParams , setSearchParams]=  useSearchParams();
   const [students, setStudents] = useState(initialStudents);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedClass, setSelectedClass] = useState('All Classes');
@@ -37,6 +38,16 @@ export default function StudentsPage() {
     return matchesSearch && matchesClass && matchesStatus;
   });
 
+  useEffect(()=>{
+    if(searchParams.get('action')=== 'add'){
+        setStudentToEdit(null);
+        setStudentModalOpen(true); 
+      searchParams.delete('action');
+      setSearchParams(searchParams,{replace:true})
+      console.log(setSearchParams(searchParams))
+    }
+    
+  })
   const handleSaveStudent = (formData) => {
     const initials = formData.name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
 
